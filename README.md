@@ -1,48 +1,32 @@
 # PracticaSupaBase — ListView + Glide + Supabase SDK (UTEQ)
 
-Aplicación Android nativa en **Kotlin** para la asignatura **Aplicaciones Móviles** (6.º semestre, UTEQ). Consulta la tabla `alumnos` en **Supabase** mediante el SDK oficial y muestra los registros en un **ListView** con diseño personalizado, fotos circulares con **Glide** y filtros por semestre y materia.
+Aplicación Android nativa en Kotlin para la asignatura **Aplicaciones Móviles** 
+(6.º semestre, UTEQ). Consulta la tabla `alumnos` en Supabase mediante el SDK 
+oficial y muestra los registros en un **ListView** con diseño personalizado, 
+fotos circulares con **Glide** y filtros por semestre y materia.
 
----
+## Requisitos de la práctica
 
-## Identidad del proyecto (renombrado)
-
-| Elemento | Valor |
-|----------|-------|
-| Carpeta / `rootProject.name` | `PracticaSupaBase` |
-| `applicationId` / namespace | `com.estudiante.practicasupabase` |
-| Actividad principal (launcher) | `PantallaAlumnosActivity` |
-| Actividad secundaria | `ActividadListaTextoActivity` |
-| Tema | `Theme.PracticaSupaBase` |
-| Etiqueta launcher | Practica Supabase UTEQ |
-
----
-
-## Requisitos de la práctica (PDF)
-
-- **UI:** `ImageView` (logo UTEQ), `Spinner` (semestre y materia), `ListView` con ítem personalizado.
-- **Ítem de lista:** foto, nombre completo, correo, teléfono e iconos descriptivos.
-- **Datos:** SDK Supabase, consulta asíncrona a tabla `alumnos`, orden alfabético por `nombres`.
-- **Imágenes:** Glide con `circleCrop()` desde URLs.
-- **Modelo:** `data class Alumno(id, nombres, correo, telefono, foto)`.
-- **Adaptador:** `AlumnoAdapter` hereda de `ArrayAdapter<Alumno>`.
-- **Credenciales:** en `local.properties` → `BuildConfig` (no en código fuente).
-- **Componentes permitidos:** ListView, ArrayAdapter, Supabase SDK, Glide, Spinner, ImageView, TextView, LinearLayout, RelativeLayout, ConstraintLayout.
-- **Prohibidos:** RecyclerView, Compose, Retrofit, Volley, Firebase.
-
----
+- UI: ImageView (logo UTEQ), Spinner (semestre y materia), ListView con ítem personalizado.
+- Ítem de lista: foto, nombre completo, correo, teléfono e iconos descriptivos.
+- Datos: SDK Supabase, consulta asíncrona a tabla `alumnos`, orden alfabético por nombres.
+- Imágenes: Glide con `circleCrop()` desde URLs.
+- Modelo: `data class Alumno(id, nombres, correo, telefono, foto)`.
+- Adaptador: `AlumnoAdapter` hereda de `ArrayAdapter<Alumno>`.
+- Credenciales: en `local.properties` → BuildConfig (no en código fuente).
+- Componentes permitidos: ListView, ArrayAdapter, Supabase SDK, Glide, Spinner, ImageView, TextView, LinearLayout, RelativeLayout, ConstraintLayout.
+- Prohibidos: RecyclerView, Compose, Retrofit, Volley, Firebase.
 
 ## Stack tecnológico
 
 | Tecnología | Uso |
-|------------|-----|
+|---|---|
 | Kotlin | Lenguaje principal |
-| Supabase SDK BOM 3.6.0 | PostgREST (`postgrest-kt`) |
+| Supabase SDK BOM 3.6.0 | PostgREST (postgrest-kt) |
 | Glide 4.16.0 | Fotos circulares de alumnos |
 | Ktor Client 3.5.0 | Cliente HTTP Android |
-| Kotlinx Serialization | Modelos `Alumno`, `Materia` |
-| Coroutines + `lifecycleScope` | Consultas asíncronas |
-
----
+| Kotlinx Serialization | Modelos Alumno, Materia |
+| Coroutines + lifecycleScope | Consultas asíncronas |
 
 ## Estructura del proyecto
 
@@ -70,41 +54,22 @@ PracticaSupaBase/
 
 1. Copiar `local.properties.example` como `local.properties` en la raíz del proyecto.
 2. Completar `sdk.dir`, `SUPABASE_URL` y `SUPABASE_KEY`.
-3. **No** subir `local.properties` a GitHub (está en `.gitignore`).
+3. No subir `local.properties` a GitHub (está en `.gitignore`).
 
 Gradle expone las credenciales vía `BuildConfig.SUPABASE_URL` y `BuildConfig.SUPABASE_KEY` en `SupabaseManager.kt`.
 
-Tablas esperadas: `alumnos` (`id`, `nombres`, `correo`, `telefono`, `foto`) y `materias` (`id`, `nombre`, `nivel`). Fotos desde `https://sga.uteq.edu.ec` + campo `foto`.
-
----
+Tablas esperadas: `alumnos` (id, nombres, correo, telefono, foto) y `materias` (id, nombre, nivel).
 
 ## Cómo ejecutar
 
-1. Abrir **PracticaSupaBase** en Android Studio.
+1. Abrir el proyecto en Android Studio.
 2. Sincronizar Gradle.
 3. Configurar `local.properties` con credenciales válidas.
 4. Ejecutar en emulador (API 26+) o dispositivo físico.
 
-### Compilar desde terminal
-
 ```bash
 gradlew assembleDebug
 ```
-
----
-
-## Recursos renombrados (vs SDKSupaBase)
-
-| Original | PracticaSupaBase |
-|----------|------------------|
-| `logo.jpeg` | `logo_institucional_uteq.jpeg` |
-| `mail.png` | `icono_correo.png` |
-| `call.png` | `icono_telefono.png` |
-| `ic_action_name` | `icono_perfil_placeholder` |
-| `activity_main2.xml` | `activity_pantalla_alumnos.xml` |
-| `item_alumno.xml` | `fila_estudiante.xml` |
-
----
 
 ## Entrega
 
@@ -113,7 +78,4 @@ gradlew assembleDebug
 
 ---
 
-## Notas
-
-- El proyecto fuente **SDKSupaBase** no se modifica.
-- Proyecto académico — Universidad Técnica Estatal de Quevedo (UTEQ) · 2026.
+Proyecto académico — Universidad Técnica Estatal de Quevedo (UTEQ) · 2026.
