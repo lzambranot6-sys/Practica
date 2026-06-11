@@ -1,0 +1,8 @@
+## Copiar este archivo como `local.properties` en la raíz del proyecto.
+## NO subir `local.properties` a GitHub (ya está en .gitignore).
+
+sdk.dir=C\:\\Users\\TU_USUARIO\\AppData\\Local\\Android\\Sdk
+
+# Credenciales Supabase — solicitar al docente o copiar desde el panel del proyecto
+SUPABASE_URL=https://TU_PROYECTO.supabase.co
+SUPABASE_KEY=TU_CLAVE_ANON_O_SERVICE

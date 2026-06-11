@@ -1,0 +1,7 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.PracticaSupaBase" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">?android:attr/colorBackground</item>
+    </style>
+
+    <style name="Theme.PracticaSupaBase" parent="Base.Theme.PracticaSupaBase" />
+</resources>
