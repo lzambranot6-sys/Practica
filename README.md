@@ -2,8 +2,6 @@
 
 Aplicación Android nativa en **Kotlin** para la asignatura **Aplicaciones Móviles** (6.º semestre, UTEQ). Consulta la tabla `alumnos` en **Supabase** mediante el SDK oficial y muestra los registros en un **ListView** con diseño personalizado, fotos circulares con **Glide** y filtros por semestre y materia.
 
-Variante renombrada del proyecto docente **SDKSupaBase**, siguiendo el mismo enfoque de refactor que **BancoPZambrano**: identidad técnica distinta (paquete, recursos, actividad principal) con la misma funcionalidad y textos UTEQ.
-
 ---
 
 ## Identidad del proyecto (renombrado)
